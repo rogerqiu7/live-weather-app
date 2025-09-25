@@ -58,3 +58,42 @@ App (manages state and data flow)
 - Responsive design
 - Fallback UI with default data
 - City search with auto-encoding
+
+## Deployment to GitHub Pages
+
+To deploy this app to GitHub Pages, follow these steps:
+
+1. **Set the correct base path for Vite**
+   - In `vite.config.js`, set:
+     ```js
+     export default defineConfig({
+       base: '/live-weather-app/',
+       plugins: [react()],
+     })
+     ```
+
+2. **Install the gh-pages package**
+   ```bash
+   npm install --save-dev gh-pages
+   ```
+
+3. **Add a deploy script to your `package.json`**
+   ```json
+   "scripts": {
+     // ...existing scripts
+     "deploy": "gh-pages -d dist"
+   }
+   ```
+
+4. **Build and deploy your app**
+   ```bash
+   npm run build   # Bundles your app into static files in the dist/ folder
+   npm run deploy  # Publishes dist/ to the gh-pages branch for GitHub Pages
+   ```
+
+5. **Configure GitHub Pages**
+   - In your repository settings, set GitHub Pages to deploy from the `gh-pages` branch.
+
+### What do these commands do?
+- `npm run build`: Bundles your source code into static files for production, outputting them to the `dist/` folder.
+- `npm run deploy`: Uses the `gh-pages` package to publish the contents of `dist/` to the `gh-pages` branch, which GitHub Pages serves as your website.
