@@ -1,5 +1,6 @@
 {
   "name": "live-weather-app",
+  "homepage": "https://rogerqiu7.github.io/live-weather-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
