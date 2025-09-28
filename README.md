@@ -35,8 +35,31 @@ A React-based weather app that gives real-time weather info using the WeatherAPI
    npm run dev
    ```
 
-3. Open [http://localhost:5173](http://localhost:5173) in your browser
+3. Open [http://localhost:5173](http://localhost:5173) in your browser to confirm
 
+4. To build project for production (dist folder):
+    ```bash
+    npm run build
+    ```
+
+5. Deploy to github pages (gh-pages branch defined in package.json)
+    ```bash
+    npm run deploy
+    ```
+- What it does automatically:
+    1. **Creates a `gh-pages` branch** (or switches to existing one)
+    2. **Clears the branch** and copies your `dist/` files to it
+    3. **Commits the files** with a deploy message
+    4. **Pushes to GitHub** on the `gh-pages` branch
+    5. **Switches back** to your original branch
+
+6. Enable GitHub Pages in your repository:
+- Go to Settings → Pages
+- Source: Deploy from a branch
+- Branch: gh-pages
+- Folder: / (root)
+- Click Save
+- Your app will be live at: https://yourusername.github.io/repository-name
 
 ## Technical Stack
 
