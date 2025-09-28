@@ -1,6 +1,8 @@
+// URL and key for API
 const API = 'https://api.weatherapi.com/v1/forecast.json';
 const key = '1986480656ec490d950204923202611';
 
+// create function to process and clean up the fetched weather data
 function processWeatherData(data) {
     return {
         condition: data.current.condition.text,
@@ -16,6 +18,9 @@ function processWeatherData(data) {
     };
 }
 
+// function to fetch and await weather data from the API
+// allow cross origin connect, encode the query to handle special characters
+// throw error if response not ok, else return processed weather data
 export async function fetchWeather(q) {
     const url = `${API}?key=${key}&q=${encodeURIComponent(q)}`;
     const res = await fetch(url, { mode: 'cors' });

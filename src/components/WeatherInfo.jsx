@@ -1,6 +1,6 @@
-// display weather info if available, shows dummy data by default
+// create weatherinfo function that takes weather prop and displays it, shows dummy data by default
 export default function WeatherInfo({ weather }) {
-    // Use dummy data if no weather data is provided
+    // dummy data, if weather exists, else use dummy data
     const displayWeather = weather || {
         condition: "Sunny",
         location: "New York",
@@ -10,7 +10,7 @@ export default function WeatherInfo({ weather }) {
         wind: "5",
         humidity: "45"
     };
-
+    // return the html structure to display the weather information
     return (
         <div className="main-weather-display info">
             <div className="general-info">
